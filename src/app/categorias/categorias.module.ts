@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { NavegacaoComponent } from './navegacao.component';
+import { CategoriasComponent } from './categorias.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavegacaoService } from './navegacao.service';
+import { CategoriasService } from './categorias.service';
 
 @NgModule({
 	imports: [
@@ -17,11 +17,11 @@ import { NavegacaoService } from './navegacao.service';
 		RouterModule.forChild([
 			{
 				path: '',
-				component: NavegacaoComponent
+				component: CategoriasComponent
 			}
 		])
 	],
-	providers: [NavegacaoService],
-	declarations: [NavegacaoComponent]
+	providers: [CategoriasService],
+	declarations: [CategoriasComponent]
 })
-export class NavegacaoModule { }
+export class CategoriasModule { }

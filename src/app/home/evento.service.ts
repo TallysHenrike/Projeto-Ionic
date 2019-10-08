@@ -1,7 +1,7 @@
-import { Categoria } from './navegacao.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Evento } from './evento.model';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -10,11 +10,11 @@ const httpOptions = {
 };
 
 @Injectable()
-export class NavegacaoService {
+export class EventoService {
 	
 	constructor(private httpClient: HttpClient){}
 
-    listarCategorias():  Observable<Categoria[]>{
-		return this.httpClient.get<Categoria[]>(`http://localhost/restrito/categoria/listar`);
+    listarEventos():  Observable<Evento[]>{
+		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listar`);
     }
 }
