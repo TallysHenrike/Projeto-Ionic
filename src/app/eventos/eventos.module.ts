@@ -5,8 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home.component';
-import { EventoService } from './evento.service';
+import { EventosComponent } from './eventos.component';
+import { EventoService } from './eventos.service';
 
 @NgModule({
 	imports: [
@@ -17,11 +17,11 @@ import { EventoService } from './evento.service';
 		RouterModule.forChild([
 			{
 				path: '',
-				component: HomeComponent
+				component: EventosComponent
 			}
 		])
 	],
 	providers: [EventoService],
-	declarations: [HomeComponent]
+	declarations: [EventosComponent]
 })
 export class EventoModule { }

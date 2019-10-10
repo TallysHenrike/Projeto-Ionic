@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'categorias',
+		redirectTo: 'eventos',
 		pathMatch: 'full'
 	},
 	{
@@ -12,8 +12,8 @@ const routes: Routes = [
 		loadChildren: () => import('./categorias/categorias.module').then(m => m.CategoriasModule)
 	},
 	{
-		path: 'home',
-		loadChildren: () => import('./home/evento.module').then(m => m.EventoModule)
+		path: 'eventos',
+		loadChildren: () => import('./eventos/eventos.module').then(m => m.EventoModule)
 	}
 ];
 
