@@ -25,7 +25,7 @@ export class CategoriasComponent {
 				}
 			},
 			(erro)=> {
-				this.presentToast("Não foi possivel listar os eventos");
+				this.presentToast("Não foi possivel listar as categorías");
 				console.error(erro.message)
 			}
 		);
