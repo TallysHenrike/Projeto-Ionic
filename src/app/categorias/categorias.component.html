@@ -11,6 +11,7 @@
 	<ion-card *ngFor="let categoria of categorias">
 		<img src="{{'data:image/jpg;base64,' + categoria.icone}}" />
 		<ion-card-header>
+			<a routerLink="eventos/{{categoria.idCategoria}}">açlskdjfaçslkdfj</a>
 			<ion-card-subtitle>{{categoria.dataDeCadastro}}</ion-card-subtitle>
 			<ion-card-title>{{categoria.nome}}</ion-card-title>
 		</ion-card-header>

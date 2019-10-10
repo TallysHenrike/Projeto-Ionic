@@ -16,5 +16,9 @@ export class EventoService {
 
     listarEventos():  Observable<Evento[]>{
 		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listar`);
-    }
+	}
+	
+	listarEventosPorCategoria(categoria: number): Observable<Evento[]>{
+		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listarEventosPorCategoria/${categoria}`);
+	}
 }

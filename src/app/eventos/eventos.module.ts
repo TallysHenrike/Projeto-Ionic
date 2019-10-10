@@ -18,6 +18,10 @@ import { EventoService } from './eventos.service';
 			{
 				path: '',
 				component: EventosComponent
+			},
+			{
+				path: 'id',
+				component: EventosComponent
 			}
 		])
 	],
