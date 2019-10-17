@@ -6,15 +6,38 @@
 		<ion-title>Home</ion-title>
 	</ion-toolbar>
 </ion-header>
-
+<!--
 <ion-content>
 	<ion-card *ngFor="let categoria of categorias">
 		<img src="{{'data:image/jpg;base64,' + categoria.icone}}" />
 		<ion-card-header>
-			<a routerLink="/eventos/{{categoria.idCategoria}}">Ver Eventos</a>
-			<ion-card-subtitle>{{categoria.dataDeCadastro}}</ion-card-subtitle>
+			<a routerLink="/eventos/{{categoria.idCategoria}}"></a>Ver Eventos</a>
 			<ion-card-title>{{categoria.nome}}</ion-card-title>
 		</ion-card-header>
 		<ion-card-content>{{categoria.descricao}}</ion-card-content>
 	</ion-card>
+</ion-content>
+-->
+
+
+<ion-content>
+	<ion-list>
+		<ion-list-header>
+			CATEGORIAS
+		</ion-list-header>
+
+		<ion-item *ngFor="let categoria of categorias">
+			<ion-avatar slot="start">
+				<a routerLink="/eventos/{{categoria.idCategoria}}">
+					<img src="{{'data:image/jpg;base64,' + categoria.icone}}"/>
+				</a>
+			</ion-avatar>
+			<ion-label>
+				<a routerLink="/eventos/{{categoria.idCategoria}}">
+					<h2>{{categoria.nome}}</h2>
+					<p>{{categoria.descricao}}</p>
+				</a>
+			</ion-label>
+		</ion-item>
+	</ion-list>
 </ion-content>

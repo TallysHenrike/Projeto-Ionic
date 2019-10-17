@@ -12,7 +12,7 @@
 		<img src="{{'data:image/jpg;base64,' + evento.imagemPrincipal}}" />
 		<ion-card-header>
 			<a routerLink="/evento/{{evento.idEvento}}">Ver evento</a>
-			<ion-card-subtitle>{{evento.dataDeInicio}}</ion-card-subtitle>
+			<ion-card-subtitle>{{evento.dataDeInicio | date:'d/M/yy, h:mm a'}}</ion-card-subtitle>
 			<ion-card-title>{{evento.titulo}}</ion-card-title>
 		</ion-card-header>
 		<ion-card-content>{{evento.descricao}}</ion-card-content>

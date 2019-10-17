@@ -20,15 +20,12 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
 		return next.handle(dupReq);
 	}
 }
-    
-    
+
 @NgModule({
 	providers: [{
 		provide: HTTP_INTERCEPTORS,
 		useClass: HttpsRequestInterceptor,
 		multi: true,
 	}]
-})
-    
-    
+})    
 export class Interceptor {}

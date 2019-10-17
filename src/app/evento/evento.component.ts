@@ -5,7 +5,7 @@ import { Evento } from '../eventos/evento.model';
 import { EventoService } from '../eventos/eventos.service';
 
 @Component({
-	selector: 'app-evento',
+	selector: 'evento',
 	templateUrl: './evento.component.html',
 	styleUrls: ['./evento.component.scss'],
 })
@@ -24,10 +24,8 @@ export class EventoComponent implements OnInit {
 			if (params['idEvento']) {
 				this.eventoService.buscarEventoPorId(parseInt(params['idEvento'])).subscribe(
 					(res) => {
-						if (res) {
-							this.evento = res;
-							this.presentToast(res.titulo);
-						}
+						this.evento = res;
+						this.presentToast(res.titulo);
 					},
 					(erro) => {
 						this.presentToast("Não foi possivel visualizar este evento. Tente novamente.");
