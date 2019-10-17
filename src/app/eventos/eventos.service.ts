@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Evento } from './eventos.model';
+import { Evento } from './evento.model';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -20,5 +20,9 @@ export class EventoService {
 	
 	listarEventosPorCategoria(categoria: number): Observable<Evento[]>{
 		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listarEventosPorCategoria/${categoria}`);
+	}
+
+	buscarEventoPorId(evento: number): Observable<Evento> {
+		return this.httpClient.get<Evento>(`http://localhost/restrito/evento/buscar/${evento}`);
 	}
 }

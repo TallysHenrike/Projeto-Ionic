@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Evento } from './eventos.model';
+import { Evento } from './evento.model';
 import { EventoService } from './eventos.service';
 import { ToastController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'eventos',
@@ -16,7 +15,6 @@ export class EventosComponent implements OnInit {
 	constructor(
 		private eventoService: EventoService,
 		public toastController: ToastController,
-		private route: ActivatedRoute
 	) { }
 
 	ngOnInit() {
@@ -32,23 +30,6 @@ export class EventosComponent implements OnInit {
 				console.error(erro.message)
 			}
 		);
-		
-		this.route.params.subscribe(params => {
-			if(params['id']){
-				this.eventoService.listarEventosPorCategoria(parseInt(params['id'])).subscribe(
-					(res)=> {
-						if(res){
-							this.eventos = res;
-							this.presentToast("Lista de eventos");
-						}
-					},
-					(erro)=> {
-						this.presentToast("Não foi possivel listar os eventos");
-						console.error(erro.message)
-					}
-				);
-			}
-		});
 	}
 
 	async presentToast(mensagem: string) {
