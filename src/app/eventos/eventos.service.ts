@@ -15,14 +15,14 @@ export class EventoService {
 	constructor(private httpClient: HttpClient){}
 
     listarEventos():  Observable<Evento[]>{
-		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listar`);
+		return this.httpClient.get<Evento[]>(`https://api.arscrift.digital/restrito/evento/listar`);
 	}
 	
 	listarEventosPorCategoria(categoria: number): Observable<Evento[]>{
-		return this.httpClient.get<Evento[]>(`http://localhost/restrito/evento/listarEventosPorCategoria/${categoria}`);
+		return this.httpClient.get<Evento[]>(`https://api.arscrift.digital/restrito/evento/listarEventosPorCategoria/${categoria}`);
 	}
 
 	buscarEventoPorId(evento: number): Observable<Evento> {
-		return this.httpClient.get<Evento>(`http://localhost/restrito/evento/buscar/${evento}`);
+		return this.httpClient.get<Evento>(`https://api.arscrift.digital/restrito/evento/buscar/${evento}`);
 	}
 }

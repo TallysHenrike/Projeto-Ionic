@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { EventosComponent } from './eventos.component';
 import { EventoService } from './eventos.service';
+import { MercadoPagoService } from '../evento/mercado-pago.service';
 
 @NgModule({
 	imports: [
@@ -25,7 +26,7 @@ import { EventoService } from './eventos.service';
 			}
 		])
 	],
-	providers: [EventoService],
+	providers: [EventoService, MercadoPagoService],
 	declarations: [EventosComponent]
 })
 export class EventosModule { }
