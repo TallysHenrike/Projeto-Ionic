@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
 import { EventoComponent } from './evento.component';
-import { EventoService } from '../eventos/eventos.service';
 import { MercadoPagoService } from './mercado-pago.service';
 import { Sanitizer } from '../pipe/sanitizer.pipe';
+import { EventoService } from './evento.service';
 
 @NgModule({
 	imports: [
@@ -22,7 +22,7 @@ import { Sanitizer } from '../pipe/sanitizer.pipe';
 				component: EventoComponent
 			},
 			{
-				path: ':idEvento',
+				path: ':codigo-do-evento',
 				component: EventoComponent
 			}
 		])

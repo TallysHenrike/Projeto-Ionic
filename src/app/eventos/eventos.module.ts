@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
 import { EventosComponent } from './eventos.component';
-import { EventoService } from './eventos.service';
 import { MercadoPagoService } from '../evento/mercado-pago.service';
+import { EventoService } from '../evento/evento.service';
 
 @NgModule({
 	imports: [
@@ -21,7 +21,7 @@ import { MercadoPagoService } from '../evento/mercado-pago.service';
 				component: EventosComponent
 			},
 			{
-				path: ':idCategoria',
+				path: ':codigo-do-evento',
 				component: EventosComponent
 			}
 		])

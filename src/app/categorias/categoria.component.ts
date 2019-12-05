@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
-import { CategoriasService } from './categorias.service';
-import { Categoria } from './categorias.model';
 import { ToastController } from '@ionic/angular';
+import { CategoriaModel } from './categoria.model';
+import { CategoriaService } from './categoria.service';
 
 @Component({
 	selector: 'categorias',
-	templateUrl: 'categorias.component.html',
-	styleUrls: ['categorias.component.scss'],
+	templateUrl: 'categoria.component.html',
+	styleUrls: ['categoria.component.scss'],
 })
 export class CategoriasComponent {
-	public categorias: Categoria[];
+	public categorias: CategoriaModel[];
 
 	constructor(
-		private categoriasService: CategoriasService,
+		private categoriaService: CategoriaService,
 		public toastController: ToastController
 	) { }
 
 	ngOnInit() {
-		this.categoriasService.listarCategorias().subscribe(
+		this.categoriaService.listarCategorias().subscribe(
 			(res)=> {
 				if(res){
 					this.categorias = res;

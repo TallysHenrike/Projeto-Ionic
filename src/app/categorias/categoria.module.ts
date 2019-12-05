@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { CategoriasComponent } from './categorias.component';
+import { CategoriasComponent } from './categoria.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CategoriasService } from './categorias.service';
+import { CategoriaService } from './categoria.service';
 
 @NgModule({
 	imports: [
@@ -21,7 +21,7 @@ import { CategoriasService } from './categorias.service';
 			}
 		])
 	],
-	providers: [CategoriasService],
+	providers: [CategoriaService],
 	declarations: [CategoriasComponent]
 })
 export class CategoriasModule { }

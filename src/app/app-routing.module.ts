@@ -9,13 +9,12 @@ const routes: Routes = [
 	},
 	{
 		path: 'categorias',
-		loadChildren: () => import('./categorias/categorias.module').then(m => m.CategoriasModule)
+		loadChildren: () => import('./categorias/categoria.module').then(m => m.CategoriasModule)
 	},
 	{
 		path: 'eventos',
 		loadChildren: () => import('./eventos/eventos.module').then(m => m.EventosModule)
-	}
-	,
+	},
 	{
 		path: 'evento',
 		loadChildren: () => import('./evento/evento.module').then(m => m.EventoModule)

@@ -22,18 +22,16 @@
 
 <ion-content>
 	<ion-list>
-		<ion-list-header>
-			CATEGORIAS
-		</ion-list-header>
+		<ion-list-header>CATEGORIAS</ion-list-header>
 
 		<ion-item *ngFor="let categoria of categorias">
 			<ion-avatar slot="start">
-				<a routerLink="/eventos/{{categoria.idCategoria}}">
-					<img src="{{'data:image/jpg;base64,' + categoria.icone}}"/>
+				<a [routerLink]="[ '/eventos', categoria.codigo ]">
+					<img [src]="'data:image/jpg;base64,' + categoria.imagem"/>
 				</a>
 			</ion-avatar>
 			<ion-label>
-				<a routerLink="/eventos/{{categoria.idCategoria}}">
+				<a [routerLink]="[ '/eventos', categoria.codigo ]">
 					<h2>{{categoria.nome}}</h2>
 					<p>{{categoria.descricao}}</p>
 				</a>

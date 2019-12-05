@@ -1,9 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { Evento } from '../eventos/evento.model';
-import { EventoService } from '../eventos/eventos.service';
 import { MercadoPagoService } from './mercado-pago.service';
+import { EventosModule } from '../eventos/eventos.module';
+import { EventoService } from './evento.service';
 
 @Component({
 	selector: 'evento',
@@ -12,7 +12,7 @@ import { MercadoPagoService } from './mercado-pago.service';
 })
 export class EventoComponent implements OnInit {
 
-	public evento: Evento;
+	public evento: EventosModule;
 	public pagar: boolean = false;
 	public mercadoPago: any;
 
@@ -25,8 +25,8 @@ export class EventoComponent implements OnInit {
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
-			if (params['idEvento']) {
-				this.eventoService.buscarEventoPorId(parseInt(params['idEvento'])).subscribe(
+			if (params['codigo-do-evento']) {
+				this.eventoService.buscarEvento(parseInt(params['codigo-do-evento'])).subscribe(
 					(res) => {
 						this.evento = res;
 						this.presentToast(res.titulo);

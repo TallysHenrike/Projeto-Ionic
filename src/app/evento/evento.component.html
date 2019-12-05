@@ -9,12 +9,12 @@
 
 <ion-content fullscreen>
 	<ion-card>
-		<img src="{{'data:image/jpg;base64,' + evento?.imagemPrincipal}}" />
+		<img [src]="'data:image/jpg;base64,' + evento?.imagem" />
 		<ion-card-header>
-			<ion-card-subtitle>{{evento?.dataDeInicio | date:'d/M/yy, h:mm a'}}</ion-card-subtitle>
+			<ion-card-subtitle>{{evento?.dataDeCriacao | date:'d/M/yy, h:mm a'}}</ion-card-subtitle>
 			<ion-card-title>{{evento?.titulo}}</ion-card-title>
 		</ion-card-header>
-		<ion-card-content [innerHTML]="evento?.corpo"></ion-card-content>
+		<ion-card-content [innerHTML]="evento?.apresentacao"></ion-card-content>
 		<section class="full-width">
 			<ion-button expand="full" color="secondary" (click)="checkout()">Reservar vaga</ion-button>
 		</section>
